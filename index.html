@@ -2,96 +2,127 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>PROJECT LOOP LOG</title>
+<title>PROJECT: LOOP TRACE</title>
 
 <style>
 body {
     margin: 0;
     background: #05070d;
-    color: #d0f7ff;
+    color: #cfefff;
     font-family: 'Noto Sans KR', sans-serif;
 }
 
 /* 상단 시스템 바 */
 .topbar {
-    padding: 20px;
-    border-bottom: 1px solid #1c2b33;
+    padding: 18px 25px;
+    font-size: 12px;
     letter-spacing: 2px;
-    font-size: 14px;
-    color: #7adfff;
+    color: #6fdcff;
+    border-bottom: 1px solid #1b2a33;
 }
 
-/* 메인 컨테이너 */
+/* 전체 */
 .container {
     max-width: 900px;
     margin: auto;
-    padding: 40px;
+    padding: 50px 30px;
 }
 
-/* 프로젝트 타이틀 */
+/* 타이틀 */
 .title {
-    <div class="title glitch">
-    반복 끝에서 나는
-</div>
-    font-size: 26px;
-    margin-bottom: 10px;
+    font-size: 28px;
+    font-weight: bold;
     color: #ffffff;
+    margin-bottom: 5px;
 }
 
-.sub {
-    font-size: 13px;
-    color: #6a8a99;
+.subtitle {
+    font-size: 12px;
+    color: #6a8ea0;
     margin-bottom: 40px;
 }
 
 /* 카드 */
 .card {
     border: 1px solid #1c2b33;
-    padding: 20px;
-    margin-bottom: 15px;
-    transition: 0.3s;
+    padding: 18px;
+    margin-bottom: 12px;
     cursor: pointer;
+    transition: 0.25s;
+    background: rgba(255,255,255,0.02);
 }
 
 .card:hover {
     border-color: #00eaff;
+    transform: translateX(6px);
     background: rgba(0, 234, 255, 0.05);
-    transform: translateX(5px);
 }
 
-/* 카드 제목 */
 .card-title {
-    font-size: 18px;
-    margin-bottom: 5px;
-    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 4px;
 }
 
-/* 카드 설명 */
 .card-desc {
-    font-size: 13px;
-    color: #8aa6b3;
+    font-size: 12px;
+    color: #7f9aad;
 }
 
-/* 작은 시스템 텍스트 */
+/* 상태 로그 */
 .system {
-    font-size: 12px;
-    color: #4d6b7a;
-    margin-top: 40px;
+    margin-top: 50px;
+    font-size: 11px;
+    color: #4f6c7a;
+    line-height: 1.8;
+}
+
+/* 글리치 효과 */
+.glitch {
+    position: relative;
+    animation: glitch 2.5s infinite;
+}
+
+@keyframes glitch {
+    0% { text-shadow: 1px 0 red, -1px 0 cyan; }
+    20% { text-shadow: -1px 0 red, 1px 0 cyan; }
+    40% { text-shadow: 1px 1px red, -1px -1px cyan; }
+    60% { text-shadow: -2px 0 red, 2px 0 cyan; }
+    80% { text-shadow: 1px 0 red, -1px 0 cyan; }
+    100% { text-shadow: 1px 0 red, -1px 0 cyan; }
+}
+
+/* 화면 전환 */
+body.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; transform: scale(1.02); }
 }
 </style>
+
+<script>
+function goPage(url){
+    document.body.classList.add("fade-out");
+    setTimeout(() => {
+        location.href = url;
+    }, 450);
+}
+</script>
 
 </head>
 
 <body>
 
 <div class="topbar">
-SYSTEM LOG / PROJECT: LOOP TRACE / STATUS: UNKNOWN
+SYSTEM LOG / PROJECT LOOP TRACE / STATUS: STABLE (UNCONFIRMED)
 </div>
 
 <div class="container">
 
-<div class="title">반복 끝에서 나는</div>
-<div class="sub">TIME ANOMALY DETECTED / 2012.06.18</div>
+<div class="title glitch">반복 끝에서 나는</div>
+<div class="subtitle">DATE: 2012.06.18 / TIME ANOMALY DETECTED</div>
 
 <!-- 회차 리스트 -->
 <div class="card" onclick="goPage('ep1.html')">
@@ -101,7 +132,7 @@ SYSTEM LOG / PROJECT: LOOP TRACE / STATUS: UNKNOWN
 
 <div class="card" onclick="goPage('ep2.html')">
     <div class="card-title">EP.02 — 같은 하루</div>
-    <div class="card-desc">이미 본 장면이라는 감각</div>
+    <div class="card-desc">이미 경험한 듯한 감각</div>
 </div>
 
 <div class="card" onclick="goPage('ep3.html')">
@@ -110,56 +141,16 @@ SYSTEM LOG / PROJECT: LOOP TRACE / STATUS: UNKNOWN
 </div>
 
 <div class="system">
-> NOTE: RECORDS MAY NOT BE LINEAR<br>
-> SUBJECT "LEE JUN" STATUS: UNSTABLE MEMORY LOOP
+[ SYSTEM NOTICE ]<br>
+- MEMORY STABILITY: LOW<br>
+- SUBJECT: LEE JUN<br>
+- LOOP COUNT: UNKNOWN<br>
+- ANOMALY SOURCE: UNIDENTIFIED<br><br>
+
+> “시간은 흐르고 있는가, 아니면 반복되고 있는가”
 </div>
 
 </div>
 
 </body>
 </html>
-<style>
-/* 화면 진동 효과 */
-@keyframes shake {
-    0% { transform: translate(0px, 0px); }
-    20% { transform: translate(-2px, 2px); }
-    40% { transform: translate(-2px, -2px); }
-    60% { transform: translate(2px, 2px); }
-    80% { transform: translate(2px, -2px); }
-    100% { transform: translate(0px, 0px); }
-}
-
-/* 글리치 텍스트 */
-.glitch {
-    position: relative;
-    animation: glitch 1.5s infinite;
-}
-
-@keyframes glitch {
-    0% { text-shadow: 2px 0 red, -2px 0 cyan; }
-    20% { text-shadow: -2px 0 red, 2px 0 cyan; }
-    40% { text-shadow: 2px 2px red, -2px -2px cyan; }
-    60% { text-shadow: -1px 0 red, 1px 0 cyan; }
-    80% { text-shadow: 1px 0 red, -1px 0 cyan; }
-    100% { text-shadow: 2px 0 red, -2px 0 cyan; }
-}
-
-/* 화면 전환 fade */
-body.fade-out {
-    animation: fadeOut 0.6s forwards;
-}
-
-@keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; transform: scale(1.02); }
-}
-</style>
-<script>
-function goPage(url) {
-    document.body.classList.add("fade-out");
-
-    setTimeout(() => {
-        window.location.href = url;
-    }, 500);
-}
-</script>
