@@ -282,8 +282,23 @@ p {
 </body>
 </html>
 <div style="text-align:center; margin-top:40px;">
-  <button onclick="location.href='ep3.html'"
-          style="padding:12px 25px; border:1px solid #00eaff; background:transparent; color:white; cursor:pointer;">
+  <button onclick="location.href='ep3.html'" class="nav-btn">
     다음화 →
   </button>
 </div>
+
+<style>
+.nav-btn {
+    padding: 12px 25px;
+    border: 1px solid #00eaff;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    background: #00eaff;
+    color: black;
+}
+</style>
