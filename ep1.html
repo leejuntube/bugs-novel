@@ -220,3 +220,74 @@ p {
 
 </body>
 </html>
+<style>
+body {
+    margin: 0;
+    background: #0b0b0f;
+    color: #ffffff;
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 2.2;
+}
+
+/* 전체 컨테이너 */
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 50px 30px;
+}
+
+/* 제목 */
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+/* 본문 */
+p {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+/* 버튼 영역 */
+.nav-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+    gap: 10px;
+}
+
+/* 공통 버튼 */
+.nav-btn {
+    flex: 1;
+    padding: 14px 18px;
+    border: 1px solid #00eaff;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: 0.25s;
+    font-size: 14px;
+}
+
+/* hover 효과 (핵심) */
+.nav-btn:hover {
+    background: #00eaff;
+    color: black;
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px rgba(0, 234, 255, 0.6);
+}
+
+/* 비활성 버튼 */
+.nav-btn.disabled {
+    border: 1px solid #333;
+    color: #555;
+    cursor: default;
+}
+
+.nav-btn.disabled:hover {
+    background: transparent;
+    transform: none;
+    box-shadow: none;
+}
+</style>
